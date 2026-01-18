@@ -21,6 +21,8 @@ repositories {
 ext {
 	set('springAiVersion', "1.1.2")
 	set('swaggerUIVersion',"2.0.4")
+	set('junitVersion',"5.7.0")
+	set('mockitoCoreVersion',"5.7.0")
 }
 
 dependencies {
@@ -28,6 +30,8 @@ dependencies {
 	implementation 'org.springframework.ai:spring-ai-starter-model-google-genai'
 	implementation "org.springdoc:springdoc-openapi-starter-webmvc-ui:${swaggerUIVersion}"
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
+	testImplementation "org.mockito:mockito-core:${mockitoCoreVersion}"
+	testImplementation "org.mockito:mockito-junit-jupiter:${junitVersion}"
 	testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
 }
 
