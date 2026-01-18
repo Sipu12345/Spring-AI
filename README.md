@@ -1,4 +1,4 @@
-# Spring AI Demo
+# Spring AI
 
 This project is a **Spring Boot application** demonstrating the use of **Spring AI** to build AI-powered features in Java.
 It serves as a simple reference for integrating AI models into a modern Spring-based backend application.
