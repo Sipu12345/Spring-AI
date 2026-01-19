@@ -1,93 +1,71 @@
-# Spring AI
+# Java AI Legacy Code Modernizer
 
-This project is a **Spring Boot application** demonstrating the use of **Spring AI** to build AI-powered features in Java.
-It serves as a simple reference for integrating AI models into a modern Spring-based backend application.
-
----
-
-## 🚀 Features
-
-* Spring Boot–based application
-* Integration with Spring AI
-* REST API support
-* Clean and extensible project structure
-* Ready for experimentation and extension
+[![Java](https://img.shields.io/badge/Java-17+-blue)](https://www.oracle.com/java/)  
+[![Spring Boot](https://img.shields.io/badge/Spring_Boot-3.5.9-green)](https://spring.io/projects/spring-boot)  
+[![Ollama](https://img.shields.io/badge/Ollama-LLM-orange)](https://ollama.com/)
 
 ---
 
-## 🛠️ Tech Stack
+## Overview
 
-* **Java 17+**
-* **Spring Boot**
-* **Spring AI**
-* **Gradle**
-* RESTful APIs
+**Java AI Legacy Code Modernizer** is a Spring Boot application that leverages **LLaMA models via Ollama** to automatically modernize legacy Java 8 code to Java 17+.
 
----
+The tool helps developers:
 
-## 📦 Prerequisites
+- Convert old APIs to modern equivalents (`Date` → `LocalDate`)
+- Transform loops into **Stream API**
+- Suggest **records** for immutable classes
+- Suggest **pattern matching** for `instanceof`
+- Analyze code complexity and risk
+- Provide AI-generated explanations for modernization changes
 
-* Java 17 or higher
-* Gradle installed (or use Gradle Wrapper)
-* API credentials for your chosen AI provider (configured via environment variables)
-
----
-
-## ⚙️ Configuration
-
-Set required environment variables before running the application.
-
-Example:
-
-```bash
-export AI_API_KEY=your-api-key
-```
-
-(Exact variables depend on the AI provider you integrate.)
+This is particularly useful for teams maintaining large legacy Java codebases and aiming to adopt modern Java best practices.
 
 ---
 
-## ▶️ Running the Application
+## Features
 
-```bash
-./gradlew bootRun
-```
-
-The application will start on:
-
-```
-http://localhost:8080
-```
-
----
-
-## 📁 Project Structure
-
-```
-src/
- └── main/
-     ├── java/
-     └── resources/
- └── test/
-```
+- **Java 8 → 17 modernization** with AI assistance
+- **Static code analysis** to detect deprecated APIs and modernization opportunities
+- **Cyclomatic complexity** calculation
+- **Risk assessment** for risky constructs (`synchronized`, `Thread.stop()`)
+- **Global REST API** for integration with CI/CD pipelines or IDE plugins
+- **Swagger/OpenAPI** support for interactive API documentation
+- **Docker + Ollama integration** for running LLaMA models locally
+- **Detailed explanations** for all modernization changes with links to learning resources
 
 ---
 
-## 🧪 Testing
+## REST APIs
 
-```bash
-./gradlew test
-```
+Base URL: `/api/v1/modernizer`
+
+| Endpoint | Method | Request | Response | Description |
+|----------|--------|---------|----------|-------------|
+| `/java` | POST | `JavaModernizationRequest` | `JavaModernizationResponse` | Modernize legacy Java code |
+| `/analyze` | POST | `CodeAnalysisRequest` | `CodeAnalysisResponse` | Analyze code for deprecated APIs, loops, and modernization opportunities |
+| `/explain` | POST | `ModernizationExplanationRequest` | `ModernizationExplanationResponse` | Generate human-readable explanation of modernization changes |
+| `/validate` | POST | `CodeValidationRequest` | `CodeValidationResponse` | Validate Java source code for compilation and structural correctness |
+| `/health` | GET | - | `HealthResponse` | Check service status and AI model availability |
 
 ---
 
-## 📌 Notes
+## Technologies Used
 
-* This project is intended for learning and experimentation.
-* Extend it by adding vector stores, embeddings, or additional AI models.
+- **Java 17**
+- **Spring Boot 3.5**
+- **Spring AI** for LLaMA/Ollama integration
+- **JavaParser** for static code analysis
+- **JUnit 5** + **Mockito** for unit and integration testing
+- **Swagger/OpenAPI** for API documentation
+- **Docker** for running local Ollama LLaMA models
 
 ---
 
-## 📄 License
+## Setup & Installation
 
-This project is licensed under the MIT License.
+### Prerequisites
+
+- Java 17+
+- Maven/Gradle
+- Ollama installed locally ([https://ollama.com/](https

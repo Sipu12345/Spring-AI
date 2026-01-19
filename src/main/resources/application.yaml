@@ -1,0 +1,10 @@
+spring:
+  application:
+    name: JavaModernizerAI
+  ai:
+    ollama:
+      base-url: http://localhost:11434/
+      model: llama2
+      options:
+        num_ctx: 512
+        num_predict: 128
