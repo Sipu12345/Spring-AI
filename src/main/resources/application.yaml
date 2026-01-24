@@ -8,3 +8,7 @@ spring:
       options:
         num_ctx: 512
         num_predict: 128
+
+
+server:
+  port: 9191
